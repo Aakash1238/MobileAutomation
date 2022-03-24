@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="Resources.Listeners" ></listener>
+        <listener class-name="Resources.ExtentReport" ></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Test1">
+        <parameter name="deviceName" value="emulator-5554"></parameter>
+        <parameter name="platformVersion" value="11"></parameter>
+        <parameter name="portNumber" value="4720"></parameter>
+        <classes>
+            <class name="TestCases.CheckOutPageTest">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Test2">
+        <parameter name="deviceName" value="emulator-5556"></parameter>
+        <parameter name="platformVersion" value="9"></parameter>
+        <parameter name="portNumber" value="4722"></parameter>
+        <classes>
+            <class name="TestCases.CheckOutPageTest">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

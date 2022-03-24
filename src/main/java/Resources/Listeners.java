@@ -1,11 +1,8 @@
 package Resources;
 
-import Base.BaseLib;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.io.IOException;
 
 public class Listeners implements ITestListener {
 
@@ -26,13 +23,8 @@ public class Listeners implements ITestListener {
         // TODO Auto-generated method stub
         //screenshot
         String s = result.getName();
-        try {
-            BaseLib.getScreenshot(s);
-           // Base.getScreenshot(s);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        //BaseLib.getScreenshot(s);
+        // BaseParallel.getScreenshot(s);
 
 
     }

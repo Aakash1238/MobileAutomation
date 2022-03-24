@@ -7,11 +7,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 public class ProductPage {
-    private AppiumDriver<AndroidElement> driver;
+    private AppiumDriver driver;
 
-    public ProductPage(AppiumDriver<AndroidElement> driver) {
+    public ProductPage(AppiumDriver driver) {
 
-        this.driver = driver;
+        this.driver=driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 

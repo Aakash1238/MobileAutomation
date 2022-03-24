@@ -4,22 +4,24 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.support.PageFactory;
 
 
 public class FormPage {
 
-    private AppiumDriver<AndroidElement> driver;
+    private AppiumDriver driver;
 
 
-    public FormPage(AppiumDriver<AndroidElement> driver) {
+    public FormPage(AppiumDriver driver) {
 
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator((SearchContext) driver), this);
     }
 
+
     @AndroidFindBy(id = "com.androidsample.generalstore:id/nameField")
-    private AndroidElement nameField;
+    public AndroidElement nameField;
 
 
     @AndroidFindBy(xpath = "//*[@text='Female']")
@@ -32,7 +34,7 @@ public class FormPage {
             "\"))")
     AndroidElement element;
 
-    @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
+    @AndroidFindBy(id="com.androidsample.generalstore:id/btnLetsShop")
     private AndroidElement letsShop;
 
     public AndroidElement getNameField() {
