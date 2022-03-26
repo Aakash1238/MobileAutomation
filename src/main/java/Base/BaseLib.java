@@ -4,11 +4,9 @@
 //import io.appium.java_client.remote.MobileCapabilityType;
 //import org.apache.commons.io.FileUtils;
 //import org.openqa.selenium.OutputType;
-//import org.openqa.selenium.TakesScreenshot;
 //import org.openqa.selenium.remote.DesiredCapabilities;
 //import org.testng.annotations.AfterTest;
 //import org.testng.annotations.BeforeTest;
-//import org.testng.annotations.Test;
 //
 //import java.io.File;
 //import java.io.IOException;

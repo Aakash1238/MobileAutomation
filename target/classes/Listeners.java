@@ -23,8 +23,17 @@ public class Listeners implements ITestListener {
         // TODO Auto-generated method stub
         //screenshot
         String s = result.getName();
-        //BaseLib.getScreenshot(s);
-        // BaseParallel.getScreenshot(s);
+//        try {
+//            BaseLib.getScreenshot(s);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            BaseCloud.getScreenshot(s);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }
