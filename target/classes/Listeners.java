@@ -24,11 +24,11 @@ public class Listeners implements ITestListener {
         //screenshot
         String s = result.getName();
 //        try {
-//            BaseLib.getScreenshot(s);
+//           // BaseLib.getScreenshot(s);
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-//
+
 //        try {
 //            BaseCloud.getScreenshot(s);
 //        } catch (IOException e) {

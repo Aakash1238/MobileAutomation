@@ -11,7 +11,12 @@
 //import java.io.File;
 //import java.io.IOException;
 //import java.net.URL;
+//import java.sql.Connection;
+//import java.sql.ResultSet;
+//import java.sql.Statement;
 //import java.util.concurrent.TimeUnit;
+//
+//import static java.sql.DriverManager.getConnection;
 //
 //public class BaseLib extends AppiumServer{
 //    public static AppiumDriver driver;
@@ -25,27 +30,46 @@
 //
 //    @BeforeTest
 //    public void Init() throws Exception {
+//
+//        String host = "localhost";
+//        String port = "3306";
+//
+//
 //        //location of the app
 //        ConfigReader configReader = new ConfigReader();
+//
 //        File app = new File(System.getProperty("user.dir") + "\\app\\" + configReader.getApp());
 //
 //        //To create an object of Desired Capabilities
 //        if (configReader.getDeviceName().contains("emulator")) {
 //            startEmulator();
 //        }
-//        DesiredCapabilities capability = new DesiredCapabilities();
-//        capability.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-//        capability.setCapability(MobileCapabilityType.DEVICE_NAME, configReader.getDeviceName());
-//        capability.setCapability(MobileCapabilityType.PLATFORM_VERSION, configReader.getPlatformVersion());
-//        capability.setCapability(MobileCapabilityType.PLATFORM_NAME, configReader.getPlatformName());
-//        URL url = new URL(configReader.getUrl());
-//        driver = new AppiumDriver(url, capability);
+//        Connection con = getConnection("jdbc:mysql://" + host + ":" + port + "/mobileautomation", "root", "admin");
+//        Statement s = con.createStatement();
+//        ResultSet rs=s.executeQuery("select * from mobileautomation");
 //
-//        driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
-//        Thread.sleep(3000);
-//        System.out.println("App 1 Launched");
+//        while(rs.next()) {
+//            DesiredCapabilities capability = new DesiredCapabilities();
+//            capability.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+//            capability.setCapability(MobileCapabilityType.DEVICE_NAME, rs.getString("DeviceName"));
+//            System.out.println(rs.getString("DeviceName"));
+//            capability.setCapability(MobileCapabilityType.PLATFORM_VERSION, rs.getString("PlatformVersion"));
+//            System.out.println(rs.getString("PlatformVersion"));
+//            capability.setCapability(MobileCapabilityType.PLATFORM_NAME, rs.getString("PlatformName"));
+//            System.out.println(rs.getString("PlatformName"));
 //
 //
+////        capability.setCapability(MobileCapabilityType.DEVICE_NAME, configReader.getDeviceName());
+////        capability.setCapability(MobileCapabilityType.PLATFORM_VERSION, configReader.getPlatformVersion());
+////        capability.setCapability(MobileCapabilityType.PLATFORM_NAME, configReader.getPlatformName());
+//            URL url = new URL(configReader.getUrl());
+//            driver = new AppiumDriver(url, capability);
+//
+//            driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+//            Thread.sleep(3000);
+//            System.out.println("App Launched");
+//
+//        }
 //    }
 //
 //

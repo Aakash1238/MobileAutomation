@@ -76,6 +76,7 @@
 //        AppiumDriver context = (AppiumDriver) driver.context("WEBVIEW_com.androidsample.generalstore");
 //        driver.findElement(By.xpath("//*[@name='q']")).sendKeys("Hello");
 //        driver.findElement(By.xpath("//*[@name='q']")).sendKeys(Keys.ENTER);
+//        driver.context("NATIVE_APP");
 //        // ((AndroidDriver)driver).pressKey(new KeyEvent(AndroidKey.BACK));
 //
 //

@@ -15,14 +15,15 @@ import java.util.Map;
 
 
 public class ExtentReport implements IReporter {
-    private ExtentReports extent;
+    ExtentReports extent;
     ExtentHtmlReporter htmlReporter;
 
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "\\ReportGenerated\\htmlreport.html");
+        htmlReporter.config().setReportName("Mobile Automation Results");
         extent = new ExtentReports();
-
+        extent.setSystemInfo("Tester","Aakash Dahiya");
         extent.attachReporter(htmlReporter);
         for (ISuite suite : suites) {
             Map<String, ISuiteResult> result = suite.getResults();

@@ -18,7 +18,7 @@ import static io.appium.java_client.touch.TapOptions.tapOptions;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 
 
-public class CheckOutPageParallelTest extends BaseParallel {
+public class CheckOutPageParallelTest2 extends BaseParallel {
 
     @Test
     public void test1() throws Exception {
