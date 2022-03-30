@@ -11,10 +11,7 @@
         <parameter name="portNumber" value="4720"/>
         <classes>
             <class name="TestCases.CheckOutPageParallelTest">
-                <methods>
-                    <include name="test1"/>
-                    <include name="test2"/>
-                </methods>
+
             </class>
         </classes>
     </test>
@@ -24,10 +21,7 @@
         <parameter name="portNumber" value="4722"/>
         <classes>
             <class name="TestCases.CheckOutPageParallelTest2">
-                <methods>
-                    <include name="test1"/>
-                    <include name="test2"/>
-                </methods>
+
             </class>
         </classes>
     </test>
